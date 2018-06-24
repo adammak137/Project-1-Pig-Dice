@@ -1,8 +1,9 @@
-var scores, count, player, playerScore, playerCount, indicator1, indicator2, pressRoll;
+var scores, count, pcount, player, playerScore, playerCount, indicator1, indicator2, pressRoll;
 scores = [0, 0];
 psores = [0, 0];
 numbers = ["one" , "two", "three", "four", "five", "six"];
 count = 0;
+pCount = [0, 0]
 player = 0;
 pressRoll = document.getElementById("roll");
 indicator1 = document.getElementById("arrow1");
@@ -35,17 +36,18 @@ function roll(){
     var result = Math.floor(Math.random()*6 + 1);
     count += result;
     myNumber = numbers[result-1];
+    pCount.unshift(result);
+    pCount.pop();
     document.getElementById("diceImage").className = "fas fa-dice-" + myNumber + " fa-6x";
-
-
-
-
-
-
     updateCount();
     if(result === 1){
         count = 0;
         skip();
+    }
+    else if(pCount[0] && pCount[1] == 6){
+            count = 0;
+            scores[player] = 0;
+            skip();
     }
     else{
         pause.className = "";
@@ -55,8 +57,10 @@ function roll(){
 function skip(){
     scores[player] += count;
     count= 0;
+    pCount = [0,0]
     updateCount();
     pause.className = "hide";
+    
     if(scores[player] >= 100){
         alert("Congratulations Player " + [player+1] + " You have won this round of Pig Dice please start a new game")
         pressRoll.className = "hide";
