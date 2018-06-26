@@ -9,15 +9,86 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> 
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
-<body class="grid">
-    <div class="gridBorder"></div>
+<div class="grid">
+        <div class="gameName ">
+            <div><h1 class="display-1">Pig Dice</h1></div>
+        </div>
+        <div class="gridBorder">
+            <div class="hide" id="ogGame">
+            <div class="player-1">
+               <i class="fas fa-arrow-down fa-3x" style="padding-left: 63px;" id="arrow1"></i>
+            <h2 class="display-4 ">Player 1</h2>   
+        </div>
+             <div class="playerScore-1">
+            <div><h2>Score</h2></div>
+            <div><span class="display-4"><em id="score-1">0</em></span></div>
+            <div><h2>Count</h2></div>
+            <div><span class="display-4"><em id="count-1">0</em></span></div>
+        </div>   
+             <div class="player-2">
+                    <i class=" fas fa-arrow-down fa-3x hide " style="padding-left: 63px;" id="arrow2"></i>
+                <h2 class="display-4">Player 2</h2>
+            </div>
+        <div class="playerScore-2">      
+            <div><h2>Score</h2></div>
+            <div><span class="display-4"><em id="score-2">0</em></span></div>
+            <div><h2>Count</h2></div>
+            <div><span class="display-4"><em id="count-2">0</em></span></div>
+        </div>   
+               <div class="menu">
+            <div id="roll"> <h2 class="display-4"><i class="fas fa-sync"></i> Roll</h2></div>
+            
+        </div>
+        <div class="menu" style="align-self: center; padding-left: 23px;;">
+        <div id="pause" class="hide"><h2 class="display-4"><i class="fas fa-pause-circle"></i> Hold</h2></div>
+        </div>
+        <div class="dice" style="display:flex; flex-direction: row;">
+            <div><i id="diceImage1" class="fa fa-dice fa-4x"></i></div>
+            <div><i id="diceImage2" class="fa fa-dice fa-7x"></i></div>
+        </div>
+        
+        <div class="newGame" id="new">
+            <div><h2><em>New Game</em></h2></div>
+        </div> 
+    
+            </div>
+            <div class = "innerGrid" id="startMenu">
+                <div class="description">
+                    <h2>Game Rules</h2>
+                    <p> Pig is a simple dice game which you win by being the first player to score 100 or more points. Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold". </p>
+                </div>
+                <div class="gameRules">
+                    <h4>House Rules</h4>
+                    <ul>
+                        <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
+                        <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+                        <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn..</li>
+                        <li>If a player rolls consecutive 6's they will have their score revert to 0 and skip their turn!</li>
+                    </ul>
+                </div>
+                <div style=" grid-column: 2; justify-self: center; align-self:center">
+                    <div >
+                        <button id="gameOne" type="button" class="btn btn-primary btn-lg" >One Dice</button>
+                    </div>  
+                </div>
+                <div style=" grid-column: 3; justify-self: center; align-self:center">
+                        <div >
+                            <button id="gameTwo" type="button" class="btn btn-primary btn-lg" >Two Dice</button>
+                        </div>  
+                    </div>
+            </div>
+        </div>
+        
+<!-- <body>
+<div class="grid"> -->
+    <!-- <div class="gridBorder"></div>
     <div class="gameName ">
         <div><h1 class="display-1">Pig Dice</h1></div>
     </div>
+
     <div class="player-1">
            <i class="fas fa-arrow-down fa-3x" style="padding-left: 63px;" id="arrow1"></i>
-        <h2 class="display-4 ">Player 1</h2>
-        
+        <h2 class="display-4 ">Player 1</h2>   
     </div>
     <div class="playerScore-1">
         <div><h2>Score</h2></div>
@@ -42,12 +113,15 @@
     <div class="menu" style="align-self: center; padding-left: 23px;;">
     <div id="pause" class="hide"><h2 class="display-4"><i class="fas fa-pause-circle"></i> Hold</h2></div>
     </div>
-    <div class="dice">
-        <div><i id="diceImage" class="fa fa-dice fa-6x" ></i></div>
+    <div class="dice" style="display:flex; flex-direction: row;">
+        <div><i id="diceImage1" class="fa fa-dice fa-3x" ></i></div>
+        <div><i id="diceImage2" class="fa fa-dice fa-6x" ></i></div>
     </div>
+    
     <div class="newGame" id="new">
         <div><h2><em>New Game</em></h2></div>
-    </div>
+    </div> -->
+</div>
     <script src="main.js"></script> 
 </body>
 </html>

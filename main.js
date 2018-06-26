@@ -1,27 +1,43 @@
 var scores, count, pcount, player, playerScore, playerCount, indicator1, indicator2, pressRoll;
-scores = [0, 0];
-psores = [0, 0];
-numbers = ["one" , "two", "three", "four", "five", "six"];
-count = 0;
-pCount = [0, 0]
-player = 0;
+scores = [0, 0]; //tracks the score
+numbers = ["one" , "two", "three", "four", "five", "six"]; //used to reference the dice
+count = 0; //total count
+pCount = [0, 0] //tracks the last two rolls
+player = 0; //tracks which player is it
 pressRoll = document.getElementById("roll");
 indicator1 = document.getElementById("arrow1");
 indicator2 = document.getElementById("arrow2");
 pressRoll.addEventListener("click", roll);
 
 document.getElementById("pause").addEventListener("click",skip);
-document.getElementById("new").addEventListener("click", init);
+document.getElementById("new").addEventListener("click", ogNG);
+document.getElementById("gameOne").addEventListener("click", gameOneStart)
 
-
-function init(){
+function ogNG(){ //original new game used to restart the original game
     scores = [0, 0]
     player = 1;
     updateCount();
     skip();
     updateCount();
     pressRoll.className = "";
+    document.getElementById("diceImage1").className = "fa fa-dice fa-4x";
+    document.getElementById("diceImage2").className = "fa fa-dice fa-7x";
 }
+
+
+function gameOneStart(){
+    document.getElementById("ogGame").className = "innerGrid";
+    document.getElementById("startMenu").className = "hide";
+
+
+
+
+
+
+
+}
+
+
 
 
 
@@ -35,10 +51,10 @@ function updateCount(){
 function roll(){
     var result = Math.floor(Math.random()*6 + 1);
     count += result;
-    myNumber = numbers[result-1];
     pCount.unshift(result);
     pCount.pop();
-    document.getElementById("diceImage").className = "fas fa-dice-" + myNumber + " fa-6x";
+    document.getElementById("diceImage1").className = "fas fa-dice-" + numbers[pCount[1]-1] + " fa-3x";
+    document.getElementById("diceImage2").className = "fas fa-dice-" +  numbers[pCount[0]-1] + " fa-6x";
     updateCount();
     if(result === 1){
         count = 0;

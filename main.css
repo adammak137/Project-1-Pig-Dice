@@ -1,10 +1,104 @@
 .grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr ;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr ; */
+    grid-template-rows: repeat(4, 250px);
+    grid-template-columns: repeat(5, 1fr);
+    border: red 5px solid;
+}
+.gameName{
+    grid-row: 1;
+    grid-column: 2/5;
+    justify-self: center;
+    align-self: flex-end;
+}
+
+.player-1{
+    /* grid-row: 2; */
+    /* grid-column: 2; */
+    align-self: center;
+    justify-self: center;
+    justify-items: center;
+}
+.player-2{
+    grid-row: 1;
+    grid-column: 3;
+    align-self: center;
+    justify-self: center;
+}
+.playerScore-1{
+    grid-row: 3;
+    grid-column: 1;
+    justify-self: center;
+}
+.playerScore-2{
+    grid-row: 3;
+    grid-column: 3;
+    justify-self: center;
+}
+
+.menu{
+    grid-row: 3;
+    grid-column: 2;
+    justify-self: center;
+}
+.newGame{
+    grid-column: 2;
+    grid-row:3;
+    justify-self: center;
+    align-self: flex-end;
+}
+.dice{
+    grid-column: 2;
+    grid-row: 1/2;
+    justify-self: center;
+    align-self: center;
+}
+
+.gridBorder{
+    grid-column: 2/5;
+    grid-row:2/4;
+    border: 1px black solid;
+}
+.hide{
+    display: none;
+}
+
+.innerGrid{
+    grid-template-columns: 1fr 225px 1fr;
+    grid-template-rows: 150px 120px 230px;
+    /* border: blue 5px solid; */
+    display: grid;
     
 }
 
+.description{
+    grid-column: 1;
+    grid-row: 1/2;
+    align-self: center;
+}
+
+.gameRules{
+    grid-column: 1;
+    grid-row: 2/4;
+    /* align-self:center; */
+}
+
+
+
+
+
+
+/* .grid{
+    display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr ; 
+    grid-template-rows:    repeat(4, 250px);
+grid-template-columns: repeat(4, 1fr);
+border: red 5px solid;
+
+    
+}
 .gameName{
     grid-row: 1;
     grid-column: 2/5;
@@ -25,8 +119,6 @@
     align-self: center;
     justify-self: center;
 }
-
-
 .playerScore-1{
     grid-row: 3;
     grid-column: 2/3;
@@ -43,8 +135,6 @@
     grid-column: 3;
     justify-self: center;
 }
-
-
 .newGame{
     grid-column: 3;
     grid-row:3;
@@ -52,11 +142,6 @@
     align-self: flex-end;
     
 }
-
-
-
-
-
 .dice{
     grid-column: 3;
     grid-row: 2;
@@ -71,4 +156,4 @@
 }
 .hide{
     display: none;
-}
+} */
